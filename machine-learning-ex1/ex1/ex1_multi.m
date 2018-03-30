@@ -85,8 +85,8 @@ fprintf('Running gradient descent ...\n');
 alpha = 0.01;
 num_iters = 400;
 
-% Init Theta and Run Gradient Descent 
-theta = zeros(3, 1);
+% Init Theta and Run Gradient Descent
+theta=zeros(size(X,2), 1);
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
@@ -104,8 +104,7 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
-
+price = [1 (1650-mu)/sigma 3] * theta; % You should change this
 
 % ============================================================
 
