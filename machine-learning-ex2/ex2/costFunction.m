@@ -20,12 +20,13 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+hypothesis = sigmoid(X * theta);
+J = (y' * log(hypothesis) + (1-y)' * log(1-hypothesis))/(-m);
 
-
-
-
-
-
+error = hypothesis - y;
+for i = 1:size(theta)
+    grad(i,1) = (1/m)*(sum(error.*X(:,i)));
+end
 
 % =============================================================
 
